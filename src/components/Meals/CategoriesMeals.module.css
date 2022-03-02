@@ -1,0 +1,35 @@
+.card{
+    text-align: center;
+    max-width: 45rem;
+    width: 45%;
+    margin: auto;
+    margin-top: 2rem;
+    position: relative;
+    background-color: #fff;
+    color: #222;
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    animation: slide-down 300ms ease-out forwards;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-3rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

@@ -1,0 +1,57 @@
+.orderContainer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  /* max-width: 40rem; */
+  width: 90%;
+  margin: auto;
+}
+
+.order {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 15px;
+  align-self: center;
+}
+
+.order h3 {
+  margin: 0 0 0.25rem 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 80%;
+}
+
+.description {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  border-bottom: 1px solid;
+}
+
+.price {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: #ad5502;
+  font-size: 1.25rem;
+}
+
+.amount {
+  border: 2px solid #222;
+  padding: 10px;
+  border-radius: 10px;
+}
