@@ -4,6 +4,11 @@
   color: #fff;
 }
 
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
 .social {
   display: flex;
   justify-content: space-evenly;
