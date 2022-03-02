@@ -4,6 +4,13 @@ import Footer from "./components/Layout/Footer";
 import Header from "./components/Layout/Header";
 import Meals from "./components/Meals/Meals";
 import CartProvider from "./store/CartProvider";
+import Admin from './components/admin/Admin'
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -16,16 +23,23 @@ function App() {
     setCartIsShown(false);
   };
 
+  const app = <CartProvider>
+  {cartIsShown && <Cart onClose={hideCartHandler} />}
+  <Header onShowCart={showCartHandler} />
+  <main>
+    <Meals />
+  </main>
+  <Footer/>
+</CartProvider>
+
   return (
-    <CartProvider>
-      {cartIsShown && <Cart onClose={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
-      <main>
-        <Meals />
-      </main>
-      <Footer/>
-    </CartProvider>
-  );
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={app} />
+      <Route path="admin" element={<Admin />} />
+    </Routes>
+  </BrowserRouter>
+  )
 }
 
 export default App;

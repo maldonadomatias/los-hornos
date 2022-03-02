@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./Footer.module.css";
+import { Link } from "react-router-dom";
 
 
 const Footer = () => {
@@ -8,7 +9,9 @@ const Footer = () => {
       <hr className={classes.line}/>
       <ul className={classes.social}>
         <li>
-          <p>Sobre Nosotros</p>
+          <Link to="admin">
+            <p>Sobre Nosotros</p>
+          </Link>
         </li>
         <li>
           <p>Contacto</p>

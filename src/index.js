@@ -1,17 +1,6 @@
-import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ReactDOM from 'react-dom';
 
-import Admin from "./components/admin/Admin";
+import './index.css';
+import App from './App';
 
-import "./index.css";
-import App from "./App";
-
-ReactDOM.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="admin" element={<Admin />} />
-    </Routes>
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById('root'));
