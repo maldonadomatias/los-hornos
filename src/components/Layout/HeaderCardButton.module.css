@@ -27,16 +27,17 @@
   }
   
   .badge {
-    background-color: #98c4f0;
+    background-color: rgb(207, 184, 116);
     padding: 0.25rem 1rem;
     border-radius: 25px;
     margin-left: 1rem;
     font-weight: bold;
+    transition: all 0.2s ease-in-out;
   }
   
   .button:hover .badge,
   .button:active .badge {
-    background-color: #7ca7d3;
+    background-color: rgb(170, 152, 99);
   }
   
   .bump {

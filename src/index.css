@@ -10,6 +10,7 @@ html {
 
 body {
   margin: 0;
-  background-color: #7e4e38;
+  background-image: url('./assets/background2.jpg');
+  background-size:cover;
 }
 

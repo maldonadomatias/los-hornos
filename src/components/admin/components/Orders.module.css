@@ -9,6 +9,12 @@
   margin: auto;
 }
 
+.noOrders{
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
 .order {
   display: flex;
   justify-content: center;
@@ -26,16 +32,6 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-}
-
-.table{
-  position: absolute;
-  right: 5%;
-  font-size: 2.5rem;
-}
-
-.order h3 {
-  margin: 0 0 0.25rem 0;
 }
 
 .comida{

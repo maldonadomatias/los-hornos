@@ -1,16 +1,13 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-// import app from "../../../db.js";
 
 import classes from "./Orders.module.css";
-import CartContext from "../../../store/cart-context";
 
 const Orders = (props) => {
   const [order, setOrder] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const cartCtx = useContext(CartContext);
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -80,7 +77,7 @@ const Orders = (props) => {
           "Content-Type": "application/json",
         },
       }
-    );
+    )
   }
 
   const mealsList = order.reverse().map((orders) => (
@@ -117,11 +114,23 @@ const Orders = (props) => {
     </li>
   ));
 
-  return (
-    <section className={classes.orderContainer}>
-      <div>{mealsList}</div>
-    </section>
-  );
+  console.log(mealsList.length);
+
+  if (mealsList.length === 0) {
+    return (
+      <section className={classes.orderContainer}>
+        <div>
+          <p className={classes.noOrders}>Lo lamento, no tienes pedidos por el momento.</p>
+        </div>
+      </section>
+    );
+  } else {
+    return (
+      <section className={classes.orderContainer}>
+        <div>{mealsList}</div>
+      </section>
+    );
+  }
 };
 
 export default Orders;
