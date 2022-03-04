@@ -1,18 +1,16 @@
 import React, { useEffect, useState, useContext } from "react";
 import Swal from "sweetalert2";
+// import app from "../../../db.js";
 
 import classes from "./Orders.module.css";
 import CartContext from "../../../store/cart-context";
+
 const Orders = (props) => {
   const [order, setOrder] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const cartCtx = useContext(CartContext);
-
-  const addClearHandler = () => {
-    cartCtx.clearCart();
-  };
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -25,9 +23,8 @@ const Orders = (props) => {
       }
 
       const responseData = await response.json();
-      
+
       const loadedOrders = [];
-      
 
       for (const key in responseData) {
         // console.log(responseData[key].orderedItems)
@@ -40,13 +37,10 @@ const Orders = (props) => {
       }
       setOrder(loadedOrders);
       setIsLoading(false);
-      console.log(loadedOrders);
-
-
     };
-    
+
     setInterval(() => {
-      fetchOrders()
+      fetchOrders();
     }, 10000);
 
     fetchOrders().catch((error) => {
@@ -77,16 +71,31 @@ const Orders = (props) => {
     );
   }
 
+  function deleteOrderHandler(id) {
+    fetch(
+      `https://menu-app-d307a-default-rtdb.firebaseio.com/orders/${id}.json`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  }
+
   const mealsList = order.reverse().map((orders) => (
     <li className={classes.order}>
       <div className={classes.card}>
-        <h3>{orders.user.name}</h3>
+        <div className={classes.title}>
+          <h3>Cliente: {orders.user.name}</h3>
+          <h2 className={classes.table}>Mesa: {orders.user.table}</h2>
+        </div>
         <div>
           {orders.orderedItems.map((item) => (
             <div className={classes.description}>
-              <div>
+              <div className={classes.comida}>
                 <p>{item.name}</p>
-                <p>{item.amount * item.price}</p>
+                <p>${item.amount * item.price}</p>
               </div>
               <div>
                 <p className={classes.amount}> x {item.amount}</p>
@@ -96,9 +105,15 @@ const Orders = (props) => {
         </div>
         <div className={classes.price}>
           <p>Total: {orders.total.toFixed(2)}</p>
-          <button onClick={addClearHandler}>Eliminar</button>
+          <button
+            value={orders.id}
+            onClick={(e) => deleteOrderHandler(e.target.value)}
+          >
+            Finalizado
+          </button>
         </div>
       </div>
+      {console.log(orders.id)}
     </li>
   ));
 
