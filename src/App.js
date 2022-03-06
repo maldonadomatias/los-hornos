@@ -9,6 +9,8 @@ import Admin from "./components/admin/Admin";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+
+  // Two handler to show or not the Cart when you click on the cart icon
   const [cartIsShown, setCartIsShown] = useState(false);
 
   const showCartHandler = () => {
@@ -19,6 +21,7 @@ function App() {
     setCartIsShown(false);
   };
 
+  // This is client side frontend, to order the food
   const app = (
     <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
@@ -30,6 +33,7 @@ function App() {
     </CartProvider>
   );
 
+  // Add the option to go into ADMIN path
   return (
     <BrowserRouter>
       <Routes>

@@ -11,10 +11,11 @@
     padding: 0.25rem 2rem;
     border-radius: 20px;
     font-weight: bold;
+    transition: all 0.2s ease-in-out;
   }
   
   .form button:hover,
   .form button:active {
-    background-color: #641e03;
-    border-color: #641e03;
+    background-color: rgb(255, 255, 255);
+    color: #222;
   }

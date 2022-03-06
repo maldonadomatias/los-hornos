@@ -1,0 +1,42 @@
+.container{
+    background-color: rgba(255, 255, 255, 0.205);
+    padding: 20px;
+    width: 30rem;
+    margin: auto;
+    margin-top: 10rem;
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+}
+
+.form input{
+    margin: 10px;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.form button {
+    font: inherit;
+    border: none;
+    background-color: #fff;
+    color: #222;
+    cursor: pointer;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease-in-out;
+    /* width: 40%; */
+    align-self: center;
+  }
+  
+  .form button:hover{
+    background-color: rgba(255, 255, 255, 0.082);;
+    color: #fff;
+  }

@@ -110,11 +110,8 @@ const Orders = (props) => {
           </button>
         </div>
       </div>
-      {console.log(orders.id)}
     </li>
   ));
-
-  console.log(mealsList.length);
 
   if (mealsList.length === 0) {
     return (
