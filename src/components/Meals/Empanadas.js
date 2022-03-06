@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Swal from "sweetalert2";
+import ClipLoader from "react-spinners/ClipLoader";
 
 import classes from "./AvailableMeals.module.css";
 import MealItem from "./MealItem";
@@ -9,6 +9,8 @@ const Empanadas = (props) => {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [color, setColor] = useState("#ffffff");
 
   useEffect(() => {
     const fetchMeals = async () => {
@@ -45,7 +47,7 @@ const Empanadas = (props) => {
   if (isLoading) {
     return (
       <section className={classes.mealsLoading}>
-        <p>Loading...</p>
+        <ClipLoader color={color} loading={loading} size={150} />
       </section>
     );
   }

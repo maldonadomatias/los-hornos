@@ -9,8 +9,8 @@ const Bebidas = (props) => {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  let [loading, setLoading] = useState(true);
-  let [color, setColor] = useState("#ffffff");
+  const [loading, setLoading] = useState(true);
+  const [color, setColor] = useState("#ffffff");
 
   useEffect(() => {
     const fetchMeals = async () => {
