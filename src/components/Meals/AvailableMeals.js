@@ -5,7 +5,7 @@ import classes from "./AvailableMeals.module.css";
 import MealItem from "./MealItem";
 import Card from "../UI/Card";
 
-const Bebidas = (props) => {
+const AvailableMeals = (props) => {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,7 +15,7 @@ const Bebidas = (props) => {
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
-        "https://menu-app-d307a-default-rtdb.firebaseio.com/Bebidas.json"
+        props.api
       );
 
       if (!response.ok) {
@@ -67,6 +67,7 @@ const Bebidas = (props) => {
       </div>
     );
   }
+
   const mealsList = meals.map((meal) => (
     <MealItem
       id={meal.id}
@@ -89,4 +90,4 @@ const Bebidas = (props) => {
   );
 };
 
-export default Bebidas;
+export default AvailableMeals;

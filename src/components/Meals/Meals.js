@@ -1,10 +1,7 @@
 import React, { Fragment, useState } from "react";
-import Empanadas from "./Empanadas";
+import AvailableMeals from "./AvailableMeals";
 import CategoriesMeals from "./CategoriesMeals";
 import MealsSummary from "./MealsSummary";
-import Parrillada from "./Parrillada";
-import Ensalada from "./Ensalada";
-import Bebidas from "./Bebidas";
 
 const Meals = () => {
   const [meals, setMeals] = useState(0);
@@ -29,6 +26,15 @@ const Meals = () => {
     setMeals(0);
   };
 
+  // Apis menu
+
+  const empanadaApi = `https://menu-app-d307a-default-rtdb.firebaseio.com/Empanadas.json`;
+  const parrilladaApi = `https://menu-app-d307a-default-rtdb.firebaseio.com/Parrillada.json`;
+  const ensaladaApi = `https://menu-app-d307a-default-rtdb.firebaseio.com/Ensaladas.json`;
+  const bebidaApi = `https://menu-app-d307a-default-rtdb.firebaseio.com/Bebidas.json`;
+
+  // Make buttons functional into API's
+  
   const mealsList = (
     <>
       {meals === 0 && (
@@ -42,10 +48,10 @@ const Meals = () => {
           />
         </Fragment>
       )}
-      {meals === 1 && <Empanadas onGoBack={addGoBackHandler} />}
-      {meals === 2 && <Parrillada onGoBack={addGoBackHandler} />}
-      {meals === 3 && <Ensalada onGoBack={addGoBackHandler} />}
-      {meals === 4 && <Bebidas onGoBack={addGoBackHandler} />}
+      {meals === 1 && <AvailableMeals onGoBack={addGoBackHandler} api={empanadaApi} />}
+      {meals === 2 && <AvailableMeals onGoBack={addGoBackHandler} api={parrilladaApi}/>}
+      {meals === 3 && <AvailableMeals onGoBack={addGoBackHandler} api={ensaladaApi}/>}
+      {meals === 4 && <AvailableMeals onGoBack={addGoBackHandler} api={bebidaApi}/>}
     </>
   );
 
