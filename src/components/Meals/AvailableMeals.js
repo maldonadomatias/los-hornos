@@ -9,14 +9,12 @@ const AvailableMeals = (props) => {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [color, setColor] = useState("#ffffff");
+  const loading = true;
+  const color = '#fff;'
 
   useEffect(() => {
     const fetchMeals = async () => {
-      const response = await fetch(
-        props.api
-      );
+      const response = await fetch(props.api);
 
       if (!response.ok) {
         throw new Error("Something went wrong!");

@@ -1,7 +1,7 @@
 .container{
     background-color: rgba(255, 255, 255, 0.205);
     padding: 20px;
-    width: 30rem;
+    width: 20rem;
     margin: auto;
     margin-top: 10rem;
 }
@@ -39,4 +39,10 @@
   .form button:hover{
     background-color: rgba(255, 255, 255, 0.082);;
     color: #fff;
+  }
+
+  @media (min-width: 768px) {
+      .container{
+          width: 30rem;
+      }
   }

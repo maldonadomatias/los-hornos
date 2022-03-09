@@ -81,7 +81,7 @@ const Orders = (props) => {
   }
 
   const mealsList = order.reverse().map((orders) => (
-    <li className={classes.order}>
+    <li key={orders.id} className={classes.order}>
       <div className={classes.card}>
         <div className={classes.title}>
           <h3>Cliente: {orders.user.name}</h3>

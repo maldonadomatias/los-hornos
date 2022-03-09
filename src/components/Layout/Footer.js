@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div>
+    <div className={classes.footer}>
       <hr className={classes.line}/>
       <ul className={classes.social}>
         <li>
