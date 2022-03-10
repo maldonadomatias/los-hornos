@@ -94,9 +94,11 @@ const Admin = () => {
   );
 
   return (
-    <CartProvider>
-      {admission === true ? <Orders /> : orderPassword}
-    </CartProvider>
+    <main>
+      <CartProvider>
+        {admission === true ? <Orders /> : orderPassword}
+      </CartProvider>
+    </main>
   );
 };
 
