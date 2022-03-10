@@ -80,7 +80,7 @@ const Orders = (props) => {
     )
   }
 
-  const mealsList = order.reverse().map((orders) => (
+  const mealsList = order.reverse().map((orders) => ( 
     <li key={orders.id} className={classes.order}>
       <div className={classes.card}>
         <div className={classes.title}>
@@ -102,7 +102,7 @@ const Orders = (props) => {
         </div>
         <div className={classes.price}>
           <p>Total: {orders.total.toFixed(2)}</p>
-          <button
+          <button 
             value={orders.id}
             onClick={(e) => deleteOrderHandler(e.target.value)}
           >

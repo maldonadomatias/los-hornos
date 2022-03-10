@@ -40,6 +40,43 @@ hr {
   width: 50%;
 }
 
+.icons{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5px 10px;
+}
+
+.icons a{
+  font-size: 3rem;
+  color: #222 !important;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.icons a:hover{
+  color: #778DA9 !important;
+}
+
+.button{
+  font: inherit;
+  cursor: pointer;
+  background-color: #778DA9;
+  border: none;
+  color: white;
+  padding: 0.25rem 2rem;
+  border-radius: 20px;
+  width: 100%;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  align-self: center;
+}
+
+.button:hover,
+.button:active {
+  background-color: rgb(255, 255, 255);
+  color: #222;
+}
+
 @media screen and (min-width: 900px) {
   .social {
     margin: 0px;

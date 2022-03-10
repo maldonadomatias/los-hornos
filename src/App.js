@@ -6,8 +6,6 @@ import Meals from "./components/Meals/Meals";
 import CartProvider from "./store/CartProvider";
 import Admin from "./components/admin/Admin";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 function App() {
 
   // Two handler to show or not the Cart when you click on the cart icon
@@ -22,7 +20,7 @@ function App() {
   };
 
   // This is client side frontend, to order the food
-  const app = (
+  return (
     <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
@@ -31,16 +29,6 @@ function App() {
       </main>
       <Footer />
     </CartProvider>
-  );
-
-  // Add the option to go into ADMIN path
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={app} />
-        <Route exact path="/admin" element={<Admin />} />
-      </Routes>
-    </BrowserRouter>
   );
 }
 

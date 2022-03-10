@@ -5,7 +5,7 @@ import classes from './CategoriesMeals.module.css'
 const CategoriesMeals = (props) => {
   return (
     <div className={classes.container}>
-        <div onClick={props.onAddMeal} className={classes.card}>
+        <div data-testid="buttonModal" onClick={props.onAddMeal} className={classes.card}>
           <h2>Empanadas</h2>
         </div>
         <div onClick={props.onAddParrilla} className={classes.card}>
