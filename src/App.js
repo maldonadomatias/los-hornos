@@ -24,7 +24,7 @@ function App() {
     <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
-      <main>
+      <main style={{minHeight: '100vh'}}>
         <Meals />
       </main>
       <Footer />

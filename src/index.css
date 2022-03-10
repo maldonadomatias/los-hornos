@@ -6,13 +6,11 @@
 
 html {
   font-family: 'Noto Sans JP', sans-serif;
+  /* Background for entire website */
+  background-color: #222;
 }
 
-/* Background for entire website */
 body {
   margin: 0;
-  /* background-image: url('./assets/background2.jpg');
-  background-size:cover; */
-  background-color: #222;
 }
 
