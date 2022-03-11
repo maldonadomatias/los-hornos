@@ -6,12 +6,7 @@ import classes from "./Admin.module.css";
 const Admin = () => {
   const [admission, setAdmission] = useState(false);
 
-  // 2.
-  const [isLogin, setIsLogin] = useState(true);
-
-  const switchAuthModeHandler = () => {
-    setIsLogin((prevState) => !prevState);
-  };
+  const isLogin = true;
 
   const usernameInputRef = useRef();
   const passwordInputRef = useRef();

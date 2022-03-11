@@ -20,9 +20,9 @@ const Footer = () => {
       <div>
         {modalIsOpen && <Modal>
           <div className={classes.icons}>
-            <a href="#"><FaFacebookF/></a>
-            <a href="#"><FaInstagram/></a>
-            <a href="#"><FaTripadvisor/></a>
+            <button><FaFacebookF/></button>
+            <button><FaInstagram/></button>
+            <button><FaTripadvisor/></button>
           </div>
             <button className={classes.button} onClick={closeModal}>close</button>
         </Modal>}

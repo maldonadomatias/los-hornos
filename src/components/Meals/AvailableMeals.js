@@ -40,7 +40,7 @@ const AvailableMeals = (props) => {
       setIsLoading(false);
       setError(error.message);
     });
-  }, []);
+  }, [props.api]);
 
   if (isLoading) {
     return (

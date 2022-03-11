@@ -4,7 +4,6 @@ import Footer from "./components/Layout/Footer";
 import Header from "./components/Layout/Header";
 import Meals from "./components/Meals/Meals";
 import CartProvider from "./store/CartProvider";
-import Admin from "./components/admin/Admin";
 
 function App() {
 
@@ -24,7 +23,7 @@ function App() {
     <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
-      <main style={{minHeight: '100vh'}}>
+      <main style={{minHeight: '80vh'}}>
         <Meals />
       </main>
       <Footer />

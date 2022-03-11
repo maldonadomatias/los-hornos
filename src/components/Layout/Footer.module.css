@@ -2,6 +2,8 @@
    margin-top: auto;
 }
 
+
+
 .social li {
   text-decoration: none;
   list-style: none;
@@ -53,14 +55,17 @@ hr {
   margin: 5px 10px;
 }
 
-.icons a{
+.icons button{
   font-size: 3rem;
   color: #222 !important;
   padding: 10px;
   transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.icons a:hover{
+.icons button:hover{
   color: #778DA9 !important;
 }
 
