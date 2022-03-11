@@ -1,7 +1,8 @@
 .container{
-    background-color: rgba(255, 255, 255, 0.205);
+    background-color: rgba(255, 255, 255, 0.753);
     padding: 20px;
     width: 20rem;
+    border-radius: 15px;
     margin: auto;
     margin-top: 10rem;
 }
@@ -17,7 +18,7 @@
 }
 
 .form input{
-    margin: 10px;
+    margin: auto;
     border: none;
     height: 30px;
     border-radius: 5px;
@@ -39,6 +40,34 @@
   .form button:hover{
     background-color: rgba(255, 255, 255, 0.082);;
     color: #fff;
+  }
+
+  .control {
+    margin-bottom: 0.5rem;
+  }
+  
+  .control label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+  
+  .control input {
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 20rem;
+    max-width: 100%;
+  }
+
+    
+  .invalid label {
+    color: #ca3e51;
+  }
+  
+  .invalid input {
+    border-color: #aa0b20;
+    background-color: #ffeff1;
   }
 
   @media (min-width: 768px) {
