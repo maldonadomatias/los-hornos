@@ -8,14 +8,24 @@
     background-color: #778DA9;
     border: none;
     color: white;
-    padding: 0.25rem 2rem;
+    padding: 0.6rem 2rem;
     border-radius: 20px;
     font-weight: bold;
     transition: all 0.2s ease-in-out;
+    font-size: 0.8rem;
+    margin-top: 0.8rem;
   }
   
   .form button:hover,
   .form button:active {
     background-color: rgb(255, 255, 255);
     color: #222;
+  }
+
+  @media screen and (min-width: 600px) {
+    .form button{
+      padding: 0.25rem 2rem;
+      font-size: 1rem;
+    }
+    
   }
