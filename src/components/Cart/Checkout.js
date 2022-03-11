@@ -6,7 +6,7 @@ const isEmpty = (value) => value.trim().length === 0;
 const Checkout = (props) => {
   const [formInputsValidity, setFormInputValidity] = useState({
     name: true,
-    table: true
+    table: true,
   });
   const nameInputRef = useRef();
   const tableInputRef = useRef();
@@ -17,38 +17,44 @@ const Checkout = (props) => {
     const enteredName = nameInputRef.current.value;
     const enteredTable = tableInputRef.current.value;
 
-
     const enteredNameIsValid = !isEmpty(enteredName);
     const enteredTableIsValid = !isEmpty(enteredTable);
 
-
     setFormInputValidity({
       name: enteredNameIsValid,
-      table: enteredTableIsValid
+      table: enteredTableIsValid,
     });
 
-    const formIsValid = enteredNameIsValid && enteredTableIsValid
+    const formIsValid = enteredNameIsValid && enteredTableIsValid;
 
     if (!formIsValid) {
       return;
     }
 
     props.onConfirm({
-        name: enteredName,
-        table: enteredTable
+      name: enteredName,
+      table: enteredTable,
     });
   };
 
   return (
     <form className={classes.form} onSubmit={confirmHandler}>
-      <div className={`${classes.control} ${formInputsValidity.name ? '' : classes.invalid}`}>
+      <div
+        className={`${classes.control} ${
+          formInputsValidity.name ? "" : classes.invalid
+        }`}
+      >
         <label htmlFor="name">Nombre:</label>
         <input type="text" id="name" ref={nameInputRef} />
         {!formInputsValidity.name && <p>Please enter a valid name!</p>}
       </div>
-      <div className={`${classes.control} ${formInputsValidity.name ? '' : classes.invalid}`}>
+      <div
+        className={`${classes.control} ${
+          formInputsValidity.name ? "" : classes.invalid
+        }`}
+      >
         <label>Número de mesa:</label>
-        <input type='number' id="table" ref={tableInputRef}/>
+        <input type="number" id="table" ref={tableInputRef} />
       </div>
       <div className={classes.actions}>
         <button type="button" onClick={props.onCancel}>

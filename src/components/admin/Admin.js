@@ -3,10 +3,16 @@ import CartProvider from "../../store/CartProvider";
 import Orders from "./components/Orders";
 import classes from "./Admin.module.css";
 
-const Admin = () => {
-  const [admission, setAdmission] = useState(false);
 
+const isEmpty = (value) => value.trim().length === 0;
+
+const Admin = () => {
   const isLogin = true;
+  const [admission, setAdmission] = useState(false);
+  const [formInputsValidity, setFormInputValidity] = useState({
+    name: true,
+    password: true,
+  });
 
   const usernameInputRef = useRef();
   const passwordInputRef = useRef();
@@ -15,6 +21,20 @@ const Admin = () => {
     event.preventDefault();
     const enteredUsername = usernameInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
+
+    const enteredUsernameIsValid = !isEmpty(enteredUsername);
+    const enteredPasswordIsValid = !isEmpty(enteredPassword);
+
+    setFormInputValidity({
+      name: enteredUsernameIsValid,
+      password: enteredPasswordIsValid,
+    });
+
+    const formIsValid = enteredUsernameIsValid && enteredPasswordIsValid;
+
+    if (!formIsValid) {
+      return;
+    }
 
     // 1.
     // if (enteredUsername === "admin" && enteredPassword === "topsecret") {
@@ -46,11 +66,11 @@ const Admin = () => {
       )
         .then((res) => {
           if (res.ok) {
-            setAdmission(true)
+            setAdmission(true);
             return res.json();
           } else {
             return res.json().then((data) => {
-              let errorMessage = "Auth Failed!";
+              let errorMessage = "Auth Failed! Your password or username are incorrect!";
               //
               console.log(data);
               throw new Error(errorMessage);
@@ -69,20 +89,28 @@ const Admin = () => {
   const orderPassword = (
     <div className={classes.container}>
       <form className={classes.form} onSubmit={submitHandler}>
-        <label htmlFor="username"></label>
-        <input
-          ref={usernameInputRef}
-          placeholder="Username"
-          type="text"
-          name="username"
-        />
-        <label htmlFor="password"></label>
-        <input
-          ref={passwordInputRef}
-          placeholder="Password"
-          type="password"
-          name="password"
-        />
+        <div
+          className={`${classes.control} ${
+            formInputsValidity.name ? "" : classes.invalid
+          }`}
+        >
+          <label htmlFor="username">Usuario:</label>
+          <input type="text" id="username" ref={usernameInputRef} />
+          {!formInputsValidity.name && (
+            <p>Porfavor ingrese un usuario correcto!</p>
+          )}
+        </div>
+        <div
+          className={`${classes.control} ${
+            formInputsValidity.name ? "" : classes.invalid
+          }`}
+        >
+          <label htmlFor="password">Contraseña:</label>
+          <input type="password" id="password" ref={passwordInputRef} />
+          {!formInputsValidity.password && (
+            <p>Porfavor ingrese una contraseña correcta!</p>
+          )}
+        </div>
         <button type="submit">Enviar</button>
       </form>
     </div>
