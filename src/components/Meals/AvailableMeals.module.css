@@ -1,0 +1,53 @@
+.meals {
+  max-width: 60rem;
+  width: 90%;
+  margin: 2rem auto;
+  animation: meals-appear 1s ease-out forwards;
+  margin-top: 5rem;
+  color: #fff;
+}
+
+.meals ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.errorContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.mealsLoading {
+  margin: 15rem 0px;
+  text-align: center;
+  color: #fff;
+}
+
+.button {
+  font: inherit;
+  border: none;
+  background-color: #fff;
+  color: #222;
+  cursor: pointer;
+  border-radius: 25px;
+  padding: 0.5rem 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover{
+  background-color: rgba(255, 255, 255, 0.082);;
+  color: #fff;
+}
+
+@keyframes meals-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

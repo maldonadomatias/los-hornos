@@ -1,0 +1,92 @@
+.orderContainer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  /* max-width: 40rem; */
+  width: 90%;
+  margin: auto;
+}
+
+.noOrders{
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.order {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 15px;
+  align-self: center;
+}
+
+.title{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.comida{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+}
+
+.comida p{
+  margin: 0 5px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 80%;
+}
+
+.description {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  border-bottom: 1px solid;
+}
+
+.price {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: #ad5502;
+  font-size: 1.25rem;
+}
+
+.price button{
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #8a2b06;
+  border-radius: 25px;
+  margin-left: 1rem;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.price button:hover{ 
+  background-color:#8a2b06 ;
+  color: #fff;
+}
+
+.amount {
+  border: 2px solid #222;
+  padding: 10px;
+  border-radius: 10px;
+}
