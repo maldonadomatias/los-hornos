@@ -44,7 +44,7 @@ const Orders = (props) => {
       setIsLoading(false);
       setError(error.message);
     });
-  }, []);
+  }, [order]);
 
   if (isLoading) {
     return (
